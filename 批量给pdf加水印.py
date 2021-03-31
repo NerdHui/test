@@ -17,20 +17,20 @@ def outputpdf(inpdf,outpdf):
 
     # 遍历pdf的每一页,添加水印
     for page in range(pdfReader.numPages):
-        page_pdf = add_watermark(r'C:\Users\81054\Desktop\test\1.pdf', pdfReader.getPage(page))
+        page_pdf = add_watermark(r'Desktop\test\1.pdf', pdfReader.getPage(page))
         pdfWriter.addPage(page_pdf)
 
     with open(outpdf, 'wb') as target_file:
         pdfWriter.write(target_file)
 
 import os
-filePath = r'C:\Users\81054\Desktop\test\input'
+filePath = r'Desktop\test\input'
 for i,j,k in os.walk(filePath):
     print(i,j,k)
     
 for i in k:
-    inpdf=r'C:\Users\81054\Desktop\test\input'+'\%s'%i
+    inpdf=r'Desktop\test\input'+'\%s'%i
     #print(input)
-    outpdf=r'C:\Users\81054\Desktop\test\output'+'\%s'%i
+    outpdf=r'Desktop\test\output'+'\%s'%i
     
     outputpdf(inpdf,outpdf)
